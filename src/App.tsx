@@ -178,7 +178,7 @@ export default function Page() {
       <hr className="w-[95%] mx-auto border-amber-950/15 my-4 border" />
       <section className="flex flex-col gap-2 mb-4">
         <header className="flex items-center text-sm font-semibold justify-between">
-          <h2 className="text-amber-800">Galleria</h2>
+          <h2 className="text-amber-800">Galeria</h2>
           <small className="text-xs text-amber-800/50">
             Fotos ofrecidas por{" "}
             <a
