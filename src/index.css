@@ -1,0 +1,130 @@
+@import "tailwindcss";
+@import "tailwind-animations";
+
+:root {
+  font-family:
+    "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-weight: 500;
+  color-scheme: dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #461901 rgba(255, 255, 255, 0);
+}
+
+body {
+  @apply flex items-center bg-amber-50 text-amber-950 size-full;
+}
+
+body::after {
+  content: "";
+  @apply bg-amber-950/18 fixed top-0 left-0 w-full h-0.75 z-100 pointer-events-none;
+  animation: scanline 12s linear infinite;
+}
+
+body::before {
+  content: "";
+  @apply fixed left-0 w-full h-0.75 bg-amber-950/18 z-100 pointer-events-none;
+  animation: scanline 16s linear infinite reverse;
+}
+
+@keyframes scanline {
+  0% {
+    top: 0%;
+    transform: translateY(0) scaleY(1);
+    opacity: 0.3;
+  }
+  6% {
+    transform: translateY(-2px);
+  }
+  7% {
+    transform: translateY(3px);
+  }
+  8% {
+    transform: translateY(-1px);
+  }
+  9% {
+    transform: translateY(1px);
+  }
+  10% {
+    transform: translateY(0);
+  }
+  18% {
+    transform: translateY(-12px) scaleY(2);
+    opacity: 0.85;
+  }
+  19% {
+    transform: translateY(9px) scaleY(0.4);
+  }
+  20% {
+    transform: translateY(-4px) scaleY(1.4);
+  }
+  21% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.35;
+  }
+  32% {
+    transform: translateY(-3px);
+  }
+  33% {
+    transform: translateY(2px);
+  }
+  34% {
+    transform: translateY(-2px);
+  }
+  35% {
+    transform: translateY(0);
+  }
+  45% {
+    opacity: 0.2;
+  }
+  46% {
+    opacity: 0.75;
+  }
+  47% {
+    opacity: 0.25;
+  }
+  58% {
+    transform: translateY(-10px) scaleY(1.8);
+    opacity: 0.9;
+  }
+  59% {
+    transform: translateY(6px) scaleY(0.6);
+  }
+  60% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  72% {
+    transform: translateY(-2px);
+  }
+  73% {
+    transform: translateY(2px);
+  }
+  74% {
+    transform: translateY(-1px);
+  }
+  75% {
+    transform: translateY(0);
+  }
+  100% {
+    top: 100%;
+    transform: translateY(0) scaleY(1);
+    opacity: 0.3;
+  }
+}
+
+::selection {
+  @apply bg-amber-800 text-amber-50;
+}
+
+#root {
+  @apply p-4 pb-0 min-h-svh w-svw flex flex-col items-center max-md:p-2 max-md:pb-0;
+}
